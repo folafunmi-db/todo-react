@@ -1,9 +1,15 @@
 /*jshint esversion: 10 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function TodoForm(props) {
   const [input, setInput] = useState("");
+
+  const autoFocus = useRef(null);
+  
+  useEffect(() => {
+    autoFocus.current.focus();
+  });
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -30,6 +36,7 @@ function TodoForm(props) {
         name="text"
         className="todo-input"
         onChange={handleChange}
+        ref={autoFocus}
       />
       <button className="todo-button">Add a task</button>
     </form>
