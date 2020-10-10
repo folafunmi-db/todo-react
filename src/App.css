@@ -12,6 +12,7 @@ body {
     rgb(59, 52, 105) 0%,
     rgba(100, 115, 255, 1) 50% /* rgba(0, 96, 160, 1) 100% */
   );
+  object-fit: cover;
 }
 
 .todo-app {
